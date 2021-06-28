@@ -1,0 +1,121 @@
+:root {
+    --blue  : #185ADB ;
+    --gold  : #FFC947 ;
+    --white : #f0f8ff ;
+    --red   : #DA0037 ;
+    --dark  : #0A1931 ;
+    
+    --blue-shadow-sm  : 5px 5px 10px #0a2458,-5px -5px 10px #2690ff;    
+    --white-shadow-sm :   5px 5px 10px #adb3b8, -5px -5px 10px #ffffff;
+    --blue-shadow-sm-inset : inset 5px 5px 10px #113e97, inset -5px -5px 10px #1f76ff;
+}
+
+body {
+    background-color: var(--blue);
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/banner.svg);
+    background-position: center;
+    background-size: cover;
+    filter: drop-shadow(0 0 3px var(--dark));
+    animation: banner 5s infinite ease-in ;
+}
+
+@keyframes banner {
+    0%{
+        top: -100px;
+    }
+    50% {
+        top: 0;
+    }
+    100% {
+        top: -100px;
+    }
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.warp-box {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--dark);
+    overflow: hidden;
+}
+.calculator-box input {
+    border: none ;
+    outline: none ;
+    padding: 25px 20px ;
+    box-shadow: var(--white-shadow-sm) !important;
+    background-color: var(--white) !important;
+    color: var(--blue) !important;
+    width: 280px;
+}
+.calculator-box button {
+    width : 50px  ;
+    height: 50px  ;
+    outline: none ;
+    border: none  ;
+    background-color: var(--white);
+    color: var(--blue);
+    box-shadow:  var(--white-shadow-sm) ;
+    border-radius: 10px ;
+    cursor: pointer;
+    transition: .4s;
+}
+.calculator-box button:active {
+    box-shadow: var(--blue-shadow-sm-inset) ;
+}
+.calculator-box button {
+    margin-right: 20px ;
+    margin-top:   20px ;
+}
+
+
+.buttons-box {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.buttons-box button:not(:first-child) {
+    margin-top: 30px;
+}
+.buttons-box button {
+    width  : 50px ;
+    height : 50px ;
+    outline: none !important;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--white);
+    transition: .4s;
+    box-shadow: 0 0 10px var(--dark);
+    color: var(--blue);
+    transform: translateX(100px);
+}
+.buttons-box button:active {
+    box-shadow: var(--blue-shadow-sm-inset);   
+}
+
+.buttons-box button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.calculator-box button:hover  {
+    background-color: var(--blue);
+    color: var(--white);   
+}
